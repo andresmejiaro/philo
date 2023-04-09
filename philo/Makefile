@@ -6,7 +6,7 @@
 #    By: amejia <amejia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/14 14:12:43 by amejia            #+#    #+#              #
-#    Updated: 2023/04/04 19:34:51 by amejia           ###   ########.fr        #
+#    Updated: 2023/04/09 23:14:56 by amejia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = philo
 
 NAME_DEBUG = philo_debug
 
-SRCS = ft_atoi.c main.c timemanp.c
+SRCS = ft_atoi.c main.c timemanp.c philosopher.c
 
 OBJS = ${SRCS:.c=.o}
 
