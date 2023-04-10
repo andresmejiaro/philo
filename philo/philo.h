@@ -6,7 +6,7 @@
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 19:42:26 by amejia            #+#    #+#             */
-/*   Updated: 2023/04/09 23:23:11 by amejia           ###   ########.fr       */
+/*   Updated: 2023/04/10 18:13:03 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <string.h>
 # include <sys/time.h>
 # include <unistd.h>
-
 
 typedef struct s_parameters {
 	unsigned int	n_fork;
@@ -35,9 +34,9 @@ typedef struct s_parameters {
 typedef struct s_philo_params {
 	t_parameters	*params;
 	int				id;
-} t_philo_params;
+}	t_philo_params;
 
-// 0 is thinking, 1 is sleeping, 2 is eating.
+// 0 is thinking, 1 is sleeping, 2 is eating, 3 is died.
 typedef struct s_philo_state {
 	struct timeval	time_ate;
 	struct timeval	time_slept;
@@ -48,11 +47,10 @@ typedef struct s_philo_state {
 	unsigned int	n_ate;
 }	t_philo_state;
 
-
-int	ft_atoi(char *str);
-int	main(int argc, char **argv);
-int	timediff(struct timeval tim1, struct timeval tim2);
+int		ft_atoi(char *str);
+int		main(int argc, char **argv);
+int		timediff(struct timeval tim1, struct timeval tim2);
 void	*philosophy(void *params);
-
+void	*waiter(void *params);
 
 #endif

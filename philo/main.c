@@ -6,7 +6,7 @@
 /*   By: amejia <amejia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 19:40:48 by amejia            #+#    #+#             */
-/*   Updated: 2023/04/09 23:33:44 by amejia           ###   ########.fr       */
+/*   Updated: 2023/04/10 18:12:44 by amejia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,30 +59,12 @@ int	main(int argc, char **argv)
 			(void *)&(philo_params[ct - 1]));
 		ct++;
 	}
+	pthread_create(&(params.philos[ct - 1]), NULL, waiter, (void *)&(params));
 	ct = 1;
-	while (ct <= params.n_fork)
+	while (ct <= params.n_fork + 1)
 	{
 		pthread_join(params.philos[ct -1], NULL);
 		ct++;
 	}
 	return (0);
-}
-		//int w = pthread_mutex_lock(&(truep->params->forks[0]));
-		//int w = 0;
-			//pthread_mutex_unlock(&(truep->params->forks[0]));
-
-void	waiter(void *params)
-{
-	t_parameters *tparams;
-	unsigned int *served;
-
-	tparams = (t_parameters *)params;
-	served = malloc(tparams->n_fork * sizeof(int));	
-	if (served = 0)
-		exit(EXIT_FAILURE);
-	memset(served, 0, tparams->n_fork * sizeof(int));
-	while (1)
-	{
-		
-	}
 }
